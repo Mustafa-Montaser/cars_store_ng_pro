@@ -1,0 +1,47 @@
+<section>
+    <div class="container">
+        <div class="srch text-center shadow-lg rounded d-flex justify-content-between align-items-center px-3">
+            <i class="fa-solid fa-location-dot text-black-50"></i>
+            <input type="text" placeholder="Search By Model Name" class="border-0 w-100 rounded p-3 text-black-50"
+                [(ngModel)]="query" (ngModelChange)="searchForCar()">
+            <button type="button" class="btn btn-primary text-white px-5 py-2 position-relative z-3"
+                style="cursor: pointer;" (click)="searchForCar()">
+                Search
+            </button>
+        </div>
+    </div>
+
+    <div class="text-center">
+        <p class="bg-primary-subtle p-3 d-inline-block mt-5 fw-bold rounded text-primary">
+            POPULAR RENTAL DEALS
+        </p>
+        <p class="fs-2 fw-medium">
+            Most popular cars rental deals
+        </p>
+    </div>
+
+    <div class="container">
+        <div class="row g-3">
+            <ng-container *ngIf="query === ''; else queryResultTemplate">
+                <ng-container *ngFor="let car of landing.carsList">
+                    <div class="col-md-4 col-lg-3">
+                        <app-car-card [car]="car"></app-car-card>
+                    </div>
+                </ng-container>
+            </ng-container>
+            <ng-template #queryResultTemplate>
+                <ng-container *ngFor="let car of queryResult">
+                    <div class="col-md-4 col-lg-3">
+                        <app-car-card [car]="car"></app-car-card>
+                    </div>
+                </ng-container>
+            </ng-template>
+        </div>
+    </div>
+
+    <div class="d-flex justify-content-center my-5">
+        <button class="btn btn-primary px-4" routerLink="/all-cars">
+            Show all vehicles
+        </button>
+    </div>
+</section>

@@ -1,0 +1,11 @@
+nav {
+
+    li a:hover {
+        color: #0e6dfb !important;
+        // font-weight: 600;
+        transform: scale(1.1);
+        // border-bottom: 2px solid #0e6dfb !important;
+        transition: transform 250ms linear;
+    }
+    
+}

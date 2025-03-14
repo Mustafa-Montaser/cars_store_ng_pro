@@ -1,0 +1,38 @@
+<section style="position: relative; top: 100px;">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-5 p-0">
+                <div class="content position-relative">
+                    <img src="../../../assets/images/Vector.png" alt="" class="w-100 position-absolute z-1">
+                    <img src="../../../assets/images/Audi 2.png" alt="" class="w-100 position-absolute z-2" style="top: 110px;">
+                </div>
+            </div>
+            <div class="col-md p-0">
+                <div class="content">
+                    <div class="text-center">
+                        <p class="bg-primary-subtle p-3 d-inline-block mt-5 fw-bold rounded text-primary">
+                            WHY CHOOSE US
+                        </p>
+                        <p class="fs-2 fw-medium">
+                            We offer the best experience <br> with our rental deals
+                        </p>
+                    </div>
+                    <div class="">
+                        <div class="row g-1">
+                            <ng-container *ngFor="let detail of carDetails | keyvalue">
+                                <ng-container *ngIf="detail.key !== 'image' && detail.key !== 'id'">
+                                    <div class="col-3">
+                                        <p class="bg-info-subtle text-info rounded text-center p-2 text-uppercase m-0">{{detail.key}}</p>
+                                    </div>
+                                    <div class="col-7">
+                                        <p class="bg-secondary-subtle text-black rounded p-2 m-0">{{detail.value}}</p>
+                                    </div>
+                                </ng-container>
+                            </ng-container>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
