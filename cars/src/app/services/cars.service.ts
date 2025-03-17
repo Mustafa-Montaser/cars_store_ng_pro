@@ -16,11 +16,19 @@ export class CarsService {
     }
 
     getLimitCars(carsNum: number): Observable<CarSpecs[]> {
-        return this.httpClient.get<CarSpecs[]>(`${this.carsAPI}?limit=${carsNum}`)
+        return this.httpClient.get<CarSpecs[]>(`${this.carsAPI}`, {
+            params: {
+                limit: carsNum
+            }
+        });
     }
 
     getQueryCar(query: string): Observable<CarSpecs[]> {
-        return this.httpClient.get<CarSpecs[]>(`${this.carsAPI}?search=${query}`)
+        return this.httpClient.get<CarSpecs[]>(`${this.carsAPI}`, {
+            params: {
+                search: query
+            }
+        });
     }
 
     getSingleCar(id: number): Observable<CarSpecs[]> {
