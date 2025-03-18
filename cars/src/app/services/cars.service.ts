@@ -31,8 +31,8 @@ export class CarsService {
         });
     }
 
-    getSingleCar(id: number): Observable<CarSpecs[]> {
-        return this.httpClient.get<CarSpecs[]>(`${this.carsAPI}/${id}`);
+    getSingleCar(id: number): Observable<CarSpecs> {
+        return this.httpClient.get<CarSpecs>(`${this.carsAPI}/${id}`);
     }
 
     private fakeCarsImgs: string[] = [
